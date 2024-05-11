@@ -8,4 +8,3 @@ if vim.fn.has('win32') == 1 then
     vim.o.shellredir = "| Out-File -Encoding UTF8 %s"
 end
 
-

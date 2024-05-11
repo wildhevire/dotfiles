@@ -1,4 +1,5 @@
-
+-- Leader key
+vim.g.mapleader = " "
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
 -- Spaces and tab
