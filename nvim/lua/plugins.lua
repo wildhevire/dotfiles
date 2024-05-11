@@ -23,6 +23,27 @@ local plugins = {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
 -- or                              , branch = '0.1.x',
       dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+        require("nvim-tree").setup {}
+        end,
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+    {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
     }
 }
 
@@ -44,4 +65,20 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+require('lualine').setup{
+    options = {
+        theme = "onedark"
+    }
+}
 
+require("mason").setup({})
+require("mason-lspconfig").setup
+{
+    ensure_insalled = 
+    {
+        "lua_ls",
+        "rust_analyzer",
+        "clangd"
+
+    }
+}
