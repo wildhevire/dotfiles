@@ -77,7 +77,7 @@ return {
             end
         }
     },
- {
+    {
         'nvim-telescope/telescope-ui-select.nvim',
         config = function()
             require("telescope").setup {
@@ -90,6 +90,12 @@ return {
             require("telescope").load_extension("ui-select")
         end
     },
+    {
+        "stevearc/overseer.nvim",
+        config = function()
+            require("overseer").setup()
+        end,
+    }
 }
 
 
