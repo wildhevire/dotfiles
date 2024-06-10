@@ -42,6 +42,11 @@ map_n("<C-l>", "<C-w>l", { desc = "Move focus window to right" })
 map_n("<C-j>", "<C-w>j", {})
 map_n("<C-k>", "<C-w>k", {})
 
+map_n("<C-Left>", "<C-w>h", {})
+map_n("<C-Right>", "<C-w>l", {})
+map_n("<C-Down>", "<C-w>j", {})
+map_n("<C-Up>", "<C-w>k", {})
+
 -- lineNumber
 local useRelativeLineNumber = true
 function ToogleLineNumber()

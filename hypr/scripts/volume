@@ -19,10 +19,10 @@ mute() {
 muted="$(pamixer --get-mute)"
 if $muted; then
   pamixer -u
-  dunstify -a "VOLUME" "UNMUTED" -i audio-volume-high-symbolic -r 2593 -u normal
+  #dunstify -a "VOLUME" "UNMUTED" -i audio-volume-high-symbolic -r 2593 -u normal
 else 
   pamixer -m
-  dunstify -a "VOLUME" "MUTED" -i audio-volume-muted-symbolic -r 2593 -u normal
+  #dunstify -a "VOLUME" "MUTED" -i audio-volume-muted-symbolic -r 2593 -u normal
 fi
 }
 

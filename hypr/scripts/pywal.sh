@@ -16,4 +16,3 @@ check_file "$wallpaper"
 
 
 wal -i "$wallpaper"
-dunstify -a "Change color" "Colorchanged" 
