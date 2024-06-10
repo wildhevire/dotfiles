@@ -9,8 +9,7 @@
   "margin-right": 0,
   "modules-left": [
     "hyprland/workspaces",
-    "custom/playerctl",
-    "custom/playerlabel",
+        "mpris"
   ],
   "modules-center": [
     "hyprland/window"
@@ -72,6 +71,21 @@
       "Paused":  "<span>󰒮 󰏥 󰒭</span>"
     },
   },
+
+
+"mpris": {
+    "format": "{status_icon} {artist} - {title}",
+    "format-paused": "{status_icon} {artist} - {title}",
+    "player-icons": {
+        "mpv": "🎵"
+    },
+    "status-icons": {
+        "paused": " 󰏥 ",
+        "playing": " 󰐌 ",
+    },
+
+    "max-length": 48
+},
   "custom/playerlabel": {
     "format": "<span>{}</span>",
     "return-type": "json",
