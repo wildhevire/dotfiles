@@ -13,11 +13,6 @@
     "custom/playerlabel",
     
   ],
-  // "modules-center": [
-  //   "cpu",
-  //   "memory",
-  //   "disk"
-  // ],
   "modules-center": [
     "hyprland/window"
   ],
@@ -123,7 +118,7 @@
     "format": "󰋊 {}%",
     "format-alt": "󰋊 {used}/{total} GiB",
     "interval": 5,
-    "path": "/mnt/Datos"
+    "path": "/mnt/Data"
   },
   "network": {
     "format-wifi": "󰤨",

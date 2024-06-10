@@ -235,7 +235,6 @@ window#waybar {
 }
 
 #disk {
-    background-color: #282828;
     /*color: #8EC07C;*/
     border-radius: 16px;
     margin: 0px;
