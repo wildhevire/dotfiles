@@ -11,6 +11,7 @@
 }
 
 window#waybar {
+    opacity: 0.9;
     background: @background;
     /* border-bottom: 1px solid #282828; */
     color: @foreground
