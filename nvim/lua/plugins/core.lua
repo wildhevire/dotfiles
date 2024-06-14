@@ -1,10 +1,9 @@
 return {
     -- Color Scheme
-    { 
-        "catppuccin/nvim", 
-        name = "catppuccin", 
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
-        
     },
 
 
@@ -14,19 +13,23 @@ return {
         build = ":TSUpdate",
         config = function ()
             require('nvim-treesitter.configs').setup {
-                ensure_installed = { 
-                    "c", 
-                    "lua", 
-                    "vim", 
-                    "rust"
+                ensure_installed = {
+                    "c",
+                    "lua",
+                    "luadoc",
+                    "vim",
+                    "vimdoc",
+                    "rust",
+                    "gdscript",
+                    "godot_resource",
+                    "gdshader",
                 },
                 sync_install = false,
                 ignore_install = { "javascript" },
-              
                 highlight = {
                   enable = true,
                 },
-                indent = { enable = true },  
+                indent = { enable = false },
                 auto_install = true
               }
         end

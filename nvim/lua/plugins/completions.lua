@@ -9,6 +9,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-nvim-lsp-signature-help"
     },
     {
         "hrsh7th/nvim-cmp",
@@ -27,16 +28,24 @@ return {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
                 },
-                mapping = cmp.mapping.preset.insert({
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                    { name = "buffer" },
+                    { name = "luasnip" },
+                    { name = "path" },
+                    { name = "nvim_lua" },
+                    { name = 'nvim_lsp_signature_help'}
+                }),
 
+                mapping = cmp.mapping.preset.insert({
                     ["<C-[>"] = cmp.mapping.select_prev_item(),
                     ["<C-]>"] = cmp.mapping.select_next_item(),
+                    
 
                     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<ESC>"] = cmp.mapping.close(),
-
                     ["<CR>"] = cmp.mapping.confirm({
                         behavior = cmp.ConfirmBehavior.Insert,
                         select = true,
@@ -75,14 +84,7 @@ return {
                         "i",
                         "s",
                     }),
-                }),
-                sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
-                    { name = "buffer" },
-                    { name = "luasnip" },
-                    { name = "path" },
-                    { name = "nvim_lua" },
-                }),
+                })
             })
 
             -- Set configuration for specific filetype.

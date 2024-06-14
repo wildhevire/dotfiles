@@ -3,6 +3,7 @@
 --
 -- Keymap for code completion located in lua/plugins/completions.lua
 -- This is because nvim-cmp require mapping declared on setup process
+-- Keymap for code commenting also located in lua/plugin/comment.lua
 --
 --
 vim.keymap.set("n", "Q", "<nop>")
@@ -21,7 +22,9 @@ map_n('<leader>ff', builtin.find_files, { desc = "Find file" })
 map_n("<leader>fw", builtin.live_grep, { desc = "Find symbol" })
 map_n("<leader>fb", builtin.buffers, { desc = "Find symbol on opened buffer" })
 map_n("<leader>fh", builtin.help_tags, { desc = "Find help" })
-
+map_n("<leader>fn", function()
+    builtin.find_files({ cwd = vim.fn.stdpath("config") })
+end, {})
 
 -- Indenting
 map_v('<', '<gv', {})
@@ -57,7 +60,7 @@ function ToogleLineNumber()
         vim.cmd("set rnu!")
     end
 end
-
+vim.cmd("set number relativenumber")
 map_n("<leader>rn", ToogleLineNumber, { desc = "Toogle Line numbering" })
 
 
@@ -94,5 +97,3 @@ vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, lspOpts)
 vim.keymap.set("n", "gr", vim.lsp.buf.references, lspOpts)
 vim.keymap.set("n", "<leader>E", vim.diagnostic.open_float, lspOpts)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, lspOpts)
-
-

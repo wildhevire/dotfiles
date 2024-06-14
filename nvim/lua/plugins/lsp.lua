@@ -22,12 +22,22 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local lspConfig = require("lspconfig")
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
             lspConfig.lua_ls.setup({
                 on_attach = function(client)
                     client.server_capabilities.documentFormattingProvider = true
                 end
             })
             lspConfig.clangd.setup{}
+
+            local gdscript_config = {
+                capabilities = capabilities,
+                settings = {},
+            }
+            if vim.fn.has('win32') == 1 then
+                gdscript_config['cmd'] = {'ncat', 'localhost', os.getenv('GDScript_Port') or '6005'}
+            end
+            lspConfig.gdscript.setup(gdscript_config)
         end
     },
     {
