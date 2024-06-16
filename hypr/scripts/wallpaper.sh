@@ -7,7 +7,13 @@ DURATION=1
 STEP=4
 BEZIER="0.4,0.2,0.4,1.0"
 
+
 selectedWallpaper="$wallpaperDir/$(ls $wallpaperDir | shuf -n 1)"
+if [[ $1 == "video" ]]; then
+    selectedWallpaper="$(find $wallpaperDir -type f -name "*.mp4" | shuf -n 1)" 
+    echo "${selectedWallpaper}"
+fi
+
 extension="${selectedWallpaper##*.}"
 filename="${selectedWallpaper%.*}"
 

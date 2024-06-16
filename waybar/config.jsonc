@@ -183,6 +183,7 @@
   "custom/randwall": {
     "format": "󰏘",
     "on-click": "bash $HOME/.config/hypr/scripts/wallpaper.sh",
+    "on-click-right": "bash $HOME/.config/hypr/scripts/wallpaper.sh video",
     // "on-click-right": "bash $HOME/.config/hypr/wall.sh"
   },
   "custom/launcher": {
