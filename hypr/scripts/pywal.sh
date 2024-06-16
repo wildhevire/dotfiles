@@ -14,5 +14,5 @@ check_file() {
 
 check_file "$wallpaper"
 
-
-wal -i "$wallpaper"
+wal -i "$wallpaper" &
+hyprctl notify -1 2000 "rgb(ff1ea3)" "Wallpaper:${wallpaper}" &
