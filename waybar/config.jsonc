@@ -8,11 +8,10 @@
   "margin-left": 0,
   "margin-right": 0,
   "modules-left": [
-    "hyprland/workspaces",
-        "mpris"
+        "mpris",
   ],
   "modules-center": [
-    "hyprland/window"
+    "hyprland/workspaces",
   ],
   "modules-right": [
     "tray",

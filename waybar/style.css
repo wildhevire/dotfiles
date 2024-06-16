@@ -18,29 +18,29 @@ window#waybar {
 }
 
 #workspaces {
-	background: @background;
+	background: @color9;
 	margin: 5px 5px 5px 5px;
-  padding: 0px 5px 0px 5px;
+    padding: 5px 5px 5px 5px;
 	border-radius: 16px;
-  border: solid 0px;
-  font-weight: normal;
-  font-style: normal;
+    border: solid 0px;
+    font-weight: normal;
+    font-style: normal;
 }
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;
-    color: @color6;
+    color: @background;
 }
 
 #workspaces button.active {
-    color: @color6;
+    color: @foreground;
     background-color: transparent;
     border-radius: 16px;
 }
 
 #workspaces button:hover {
-	background-color: @color6;
-	color: @color0;
+	background-color: @foreground;
+	color: @color9;
 	border-radius: 16px;
 }
 
@@ -48,8 +48,8 @@ window#waybar {
 	background: transparent;
 	padding: 5px 5px 5px 5px;
 	margin: 5px 5px 5px 5px;
-  border-radius: 8px;
-  border: solid 0px @color6;
+    border-radius: 8px;
+    border: solid 0px @color6;
 }
 
 #custom-date {
@@ -81,7 +81,7 @@ window#waybar {
     color: @foreground;
 }
 #tray {
-    background: #282828;
+    background: transparent;
     margin: 5px 5px 5px 5px;
     border-radius: 16px;
     padding: 0px 5px;
