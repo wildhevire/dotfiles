@@ -4,7 +4,7 @@
 -- Keymap for code completion located in lua/plugins/completions.lua
 -- This is because nvim-cmp require mapping declared on setup process
 -- Keymap for code commenting also located in lua/plugin/comment.lua
---
+-- Key map for LSP also located lua/plugin/lsp
 --
 vim.keymap.set("n", "Q", "<nop>")
 local map = vim.keymap.set
@@ -69,31 +69,12 @@ map_n("<TAB>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 map_n("<S-TAB>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 map_n("<leader>xy", ":bdelete!<CR>", { noremap = true, silent = true })
 
--- LSP
-local lspOpts = { noremap = true, silent = true }
-map_n("K", vim.lsp.buf.hover, lspOpts)
-map_n("gd", vim.lsp.buf.definition, lspOpts)
-map_n("gD", vim.lsp.buf.declaration, lspOpts)
-map_n("gi", vim.lsp.buf.implementation, lspOpts)
+
 -- Formatting
 map_n("<leader>fm", vim.lsp.buf.format, { desc = "Format current buffer" })
 
--- TODO: Maybe change this because it taken from minimal config
--- See: https://github.com/neovim/nvim-lspconfig/blob/master/test/minimal_init.lua
--- code actions
-vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", lspOpts)
-
-vim.keymap.set("n", "<C-p>", vim.diagnostic.goto_prev, lspOpts)
-vim.keymap.set("n", "<A-p>", vim.diagnostic.goto_next, lspOpts)
-vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, lspOpts)
-
-vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, lspOpts)
 vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, lspOpts)
 vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, lspOpts)
 vim.keymap.set("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, lspOpts)
-vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, lspOpts)
-vim.keymap.set("n", "gr", vim.lsp.buf.references, lspOpts)
-vim.keymap.set("n", "<leader>E", vim.diagnostic.open_float, lspOpts)
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, lspOpts)
