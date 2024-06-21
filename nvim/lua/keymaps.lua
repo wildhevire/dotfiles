@@ -38,6 +38,8 @@ map_n("<leader>e", "<cmd> NvimTreeFocus <CR>", {
     noremap = true,
     silent = true
 })
+map_n("<A-Right>", "<cmd> NvimTreeResize +5 <CR>", {desc = "Increase Nvim Tree windoow"})
+map_n("<A-Left>", "<cmd> NvimTreeResize -5 <CR>", {desc = "Increase Nvim Tree windoow"})
 
 -- Window Movement
 map_n("<C-h>", "<C-w>h", { desc = "Move focus window to left" })
