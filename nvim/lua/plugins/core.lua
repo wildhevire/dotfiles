@@ -5,42 +5,47 @@ return {
         name = "catppuccin",
         priority = 1000,
     },
+    {
+        "xiyaowong/transparent.nvim",
+    },   
+
 
 
     --- Treesitter
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        config = function ()
-            require('nvim-treesitter.configs').setup {
-                ensure_installed = {
-                    "c",
-                    "lua",
-                    "luadoc",
-                    "vim",
-                    "vimdoc",
-                    "rust",
-                    "gdscript",
-                    "godot_resource",
-                    "gdshader",
-                },
-                sync_install = false,
-                ignore_install = { "javascript" },
-                highlight = {
-                  enable = true,
-                },
-                indent = { enable = false },
-                auto_install = true
-              }
-        end
-    },
+        {
+            "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate",
+            config = function()
+                require('nvim-treesitter.configs').setup {
+                    ensure_installed = {
+                        "c",
+                        "lua",
+                        "luadoc",
+                        "vim",
+                        "vimdoc",
+                        "rust",
+                        "gdscript",
+                        "godot_resource",
+                        "gdshader",
+                    },
+                    sync_install = false,
+                    ignore_install = { "javascript" },
+                    highlight = {
+                        enable = true,
+                    },
+                    indent = { enable = false },
+                    auto_install = true
+                }
+            end
+        },
 
 
     -- Telescope
     {
 
-        'nvim-telescope/telescope.nvim', tag = '0.1.6',
-        dependencies = { 
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.6',
+        dependencies = {
             'nvim-lua/plenary.nvim'
         }
     },
@@ -62,7 +67,7 @@ return {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
-            require('lualine').setup{
+            require('lualine').setup {
                 options = {
                     theme = "onedark"
                 }
@@ -72,11 +77,11 @@ return {
 
     {
         {
-            'akinsho/bufferline.nvim', 
-            version = "*", 
+            'akinsho/bufferline.nvim',
+            version = "*",
             dependencies = 'nvim-tree/nvim-web-devicons',
-            config = function() 
-                require("bufferline").setup{}
+            config = function()
+                require("bufferline").setup {}
             end
         }
     },
@@ -84,11 +89,11 @@ return {
         'nvim-telescope/telescope-ui-select.nvim',
         config = function()
             require("telescope").setup {
-              extensions = {
-                ["ui-select"] = {
-                  require("telescope.themes").get_dropdown {}
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown {}
+                    }
                 }
-              }
             }
             require("telescope").load_extension("ui-select")
         end
@@ -100,6 +105,3 @@ return {
         end,
     }
 }
-
-
-
