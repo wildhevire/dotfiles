@@ -1,0 +1,2 @@
+#!/bin/sh
+sh -c " QT_QPA_PLATFORM=xcb /home/wildhevire/Android/Sdk/emulator/emulator -avd arknights" &

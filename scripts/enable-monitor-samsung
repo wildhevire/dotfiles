@@ -1,0 +1,8 @@
+#!/bin/sh
+ROOT="/home/wildhevire/dotfiles/hypr"
+CONFIG=$ROOT"/config/monitor/"
+status="samsung_on.conf"
+
+
+
+ln -sf $CONFIG$status $ROOT"/samsung.conf"
