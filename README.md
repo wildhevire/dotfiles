@@ -10,6 +10,6 @@ To install edid
     drm.edid_firmware=DP-3:edid/xiaomi video=DP-3:e
     ```
     Change the DP-3 to the GPU port
-- Add edid blob to `/etc/mkinitcpio.conf'
+- Add edid blob to `/etc/mkinitcpio.conf`
 - Regenerate initramfs
     `# mkinitcpio -P`
