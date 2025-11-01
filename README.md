@@ -11,5 +11,9 @@ To install edid
     ```
     Change the DP-3 to the GPU port
 - Add edid blob to `/etc/mkinitcpio.conf`
+    - Add in `FILES()` block
+    ```
+    FILES=(/usr/lib/firmware/edid/xiaomi)
+    ```
 - Regenerate initramfs
-    `# mkinitcpio -P`
+```# mkinitcpio -P```
